@@ -39,3 +39,16 @@
 #include <opencv2/aruco.hpp>
 #include <opencv2/core/mat.hpp>
 
+struct FrameCache
+{
+    FrameCache()
+    {
+        m_bInitialized = false;        
+    }
+
+    bool m_bInitialized;
+    cv::Mat m_matPreviousGrey;
+    cv::Mat m_matDrawMask;
+    std::vector<cv::Scalar> m_vecColors;
+    std::vector<cv::Point2f> m_vecPreviousGoodPoints;
+};

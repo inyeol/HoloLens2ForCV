@@ -177,5 +177,6 @@
       <Filter>Assets</Filter>
     </None>
     <None Include="packages.config" />
+    <None Include="opencv_world430.dll" />
   </ItemGroup>
 </Project>

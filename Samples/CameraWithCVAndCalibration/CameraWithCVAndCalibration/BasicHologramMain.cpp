@@ -38,6 +38,7 @@ HMODULE LoadLibraryA(
 BasicHologramMain::BasicHologramMain(std::shared_ptr<DX::DeviceResources> const& deviceResources) :
     m_deviceResources(deviceResources)
 {
+    cv::setNumThreads(2);
     {
         SetWorldSpace();
         m_scenario = std::make_shared<CalibrationProjectionVisualizationScenario>(m_deviceResources); // Visualize three sensors

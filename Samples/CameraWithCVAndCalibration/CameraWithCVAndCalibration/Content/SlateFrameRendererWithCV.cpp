@@ -252,7 +252,7 @@ void SlateFrameRendererWithCV::FrameProcessing()
                 m_corners.clear();
                 m_ids.clear();
 
-                m_cvFrameProcessor(m_pSensorFrame, m_cvResultMat, m_ids, m_corners);
+                m_cvFrameProcessor(m_pSensorFrame, m_cvResultMat, m_ids, m_corners, m_kFrameCache);
 
                 m_centers.clear();
 

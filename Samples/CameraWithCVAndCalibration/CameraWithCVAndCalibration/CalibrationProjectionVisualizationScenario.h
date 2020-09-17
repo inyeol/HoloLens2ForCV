@@ -10,7 +10,6 @@
 //*********************************************************
 
 #include "BasicHologramMain.h"
-
 namespace BasicHologram
 {
     class CalibrationProjectionVisualizationScenario : public Scenario

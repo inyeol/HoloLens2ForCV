@@ -17,7 +17,8 @@
 #include <opencv2/aruco.hpp>
 #include <opencv2/core/mat.hpp>
 
-void ProcessRmFrameWithAruco(IResearchModeSensorFrame* pSensorFrame, cv::Mat& cvResultMat, std::vector<int> &ids, std::vector<std::vector<cv::Point2f>> &corners);
+void ProcessRmFrameWithOpticalFlow(IResearchModeSensorFrame* pSensorFrame, cv::Mat& cvResultMat, std::vector<int>& ids, std::vector<std::vector<cv::Point2f>>& corners, FrameCache& frameCache);
+void ProcessRmFrameWithAruco(IResearchModeSensorFrame* pSensorFrame, cv::Mat& cvResultMat, std::vector<int> &ids, std::vector<std::vector<cv::Point2f>> &corners, FrameCache& frameCache);
 void ProcessRmFrameWithCanny(IResearchModeSensorFrame* pSensorFrame, cv::Mat& cvResultMat);
 
 

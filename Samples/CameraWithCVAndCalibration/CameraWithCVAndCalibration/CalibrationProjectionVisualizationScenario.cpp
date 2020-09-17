@@ -400,7 +400,7 @@ void CalibrationProjectionVisualizationScenario::InitializeArucoRendering()
             pRFSlateCameraRenderer = slateCameraRenderer.get();
         }
 
-        auto slateTextureRenderer = std::make_shared<SlateFrameRendererWithCV>(m_deviceResources, ProcessRmFrameWithAruco);
+        auto slateTextureRenderer = std::make_shared<SlateFrameRendererWithCV>(m_deviceResources, ProcessRmFrameWithOpticalFlow);
         slateTextureRenderer->StartCVProcessing(0xff);
 
         float3 offset;

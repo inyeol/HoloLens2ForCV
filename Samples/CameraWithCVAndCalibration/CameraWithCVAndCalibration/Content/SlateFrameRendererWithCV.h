@@ -28,7 +28,7 @@ namespace BasicHologram
     {
     public:
         SlateFrameRendererWithCV(std::shared_ptr<DX::DeviceResources> const& deviceResources,
-                                 std::function<void(IResearchModeSensorFrame* pSensorFrame, cv::Mat& cvResultMat, std::vector<int> &ids, std::vector<std::vector<cv::Point2f>> &corners)> cvFrameProcessor) :
+                                 std::function<void(IResearchModeSensorFrame* pSensorFrame, cv::Mat& cvResultMat, std::vector<int> &ids, std::vector<std::vector<cv::Point2f>> &corners, FrameCache& frameCache)> cvFrameProcessor) :
             ModelRenderer(deviceResources)
         {
             m_Width = 0;
@@ -105,8 +105,9 @@ namespace BasicHologram
 
         std::mutex m_cornerMutex;
 
-        std::function<void(IResearchModeSensorFrame* pSensorFrame, cv::Mat& cvResultMat, std::vector<int> &ids, std::vector<std::vector<cv::Point2f>> &corners)> m_cvFrameProcessor;
+        std::function<void(IResearchModeSensorFrame* pSensorFrame, cv::Mat& cvResultMat, std::vector<int> &ids, std::vector<std::vector<cv::Point2f>> &corners, FrameCache& frameCache)> m_cvFrameProcessor;
 
         cv::Mat m_cvResultMat;
+        FrameCache m_kFrameCache;
     };
 }
